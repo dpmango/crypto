@@ -20,10 +20,10 @@ var gcmq          = require('gulp-group-css-media-queries');
 
 
 	let postplugins = [
-      sorting(),
   		autoprefixer({
   			browsers: ["last 15 versions"]
       }),
+      sorting(),
       flexbugs()
 		];
 
