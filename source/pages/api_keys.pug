@@ -1,0 +1,55 @@
+extends layout/main.pug
+
+block title
+	title Crypto
+
+	-
+		var keys = [{name: 'Bitfinex', img: 'img/b1_min.png', srcset: 'img/b1_min@2x.png 2x', label: "working"},
+					{name: 'BTC-e', img: 'img/b2_min.png', srcset: 'img/b2_min@2x.png 2x', label: "error"},
+					{name: 'Bitstamp', img: 'img/b3_min.png', srcset: 'img/b3_min@2x.png 2x', label: "check_rights"},
+					{name: 'Kraken', img: 'img/b4_min.png', srcset: 'img/b3_min@2x.png 2x', label: "error"},
+					{name: 'Coinbase', img: 'img/b2_min.png', srcset: 'img/b2_min@2x.png 2x', label: "error"},
+					{name: 'Poloniex', img: 'img/b1_min.png', srcset: 'img/b1_min@2x.png 2x', label: "working"},
+					{name: 'Bitfinex', img: 'img/b1_min.png', srcset: 'img/b1_min@2x.png 2x', label: "working"},
+					{name: 'BTC-e', img: 'img/b2_min.png', srcset: 'img/b2_min@2x.png 2x', label: "error"},
+					{name: 'Bitstamp', img: 'img/b3_min.png', srcset: 'img/b3_min@2x.png 2x', label: "check_rights"}]
+
+block pagecontent
+	+header()
+	.page_wrap
+		+left_side()
+		.content_block
+			#content.api_keys_page
+				h1.page_title Manage API keys
+
+				p.text.display_currency
+					| If you want to enter and display the Crypto currency, then
+					a(href=""): strong specify the rights
+					| for withdrawal and deposit
+
+				.api_keys_block
+					each key in keys
+						.api_key
+							form
+								.top_line
+									p.title= key.name
+									img(src = key.img, srcset = key.srcset)
+								.inputs
+									input(type="text", name="api-key", placeholder="API Key", class="form-control")
+									input(type="text", name="api-secret", placeholder="API Secret", class="form-control")
+								.bottom_line
+									div
+										a.text.where(href="") Where do I generate a key?
+									div
+										button.edit(type="submit") Edit API
+										case key.label
+											when 'working'
+												.label.working Working
+											when 'error'
+												.label.error Error
+											when 'check_rights'
+												.label.check_rights Check rights
+
+			+right_side()
+			+footer()
+

@@ -1,0 +1,46 @@
+extends layout/main.pug
+
+block title
+    title Crypto
+
+block pagecontent
+    +header()
+    .page_wrap
+        +left_side()
+        .content_block
+            #content.about_page
+                h1.page_title About
+                .block.text
+                    p.title About service
+                    p
+                        | Cryptowatch ("the Service") is a market data service developed
+                        | and distributed by Nice Legs LLC ("we" or "us").
+                        | The Service is provided without warranty on an "as is" and "as available" basis.
+                        | Any part of the Service may be changed or removed at any time without warning.
+                    p
+                        | We report market information that we derive directly from the APIs
+                        | (Application Programming Interfaces) provided by currency exchanges.
+                        | We do not manipulate the data except to abridge and/or summarize series of similar data points.
+
+                .block.text.feedback
+                    p.title Feedback
+                    p
+                        | For support, bug reports, feedback, or other questions, contact
+                        a(href="mailto: support@crypto.com"): strong  support@crypto.com
+                    form#support
+                        input(type="text", name="name", placeholder="Name")
+                        input(type="email", name="email", placeholder="E-mail")
+                        textarea(name="message", placeholder="Message")
+                        button(type="submit") Send message
+
+            +right_side()
+            +footer()
+
+
+
+
+
+
+
+
+

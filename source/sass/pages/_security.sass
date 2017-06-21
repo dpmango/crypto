@@ -1,0 +1,191 @@
+.security_page
+  .block
+    background: #282f4b
+    +r(767)
+      background: transparent
+      padding: 0
+.auth
+  +r(1350)
+    flex-wrap: wrap
+
+  & > div
+    &:first-child
+      flex: 0 0 53.5%
+      padding-right: 20px
+
+      +r(1520)
+        flex: 0 0 45%
+      +r(1350)
+        flex: 0 0 100%
+        margin-bottom: 30px
+      +r(767)
+        padding-right: 0
+    &:last-child
+      flex: 0 0 46.5%
+      +r(1520)
+        flex: 0 0 55%
+      +r(1350)
+        flex: 0 0 100%
+    &.auth_code
+      display: flex
+      +r(767)
+        flex-flow: wrap
+      & > div
+        &:first-child
+          flex: 0 0 33.5%
+          padding-right: 40px
+          +r(1350)
+            flex: 0 0 200px
+          +r(767)
+            flex: 0 0 100%
+            text-align: center
+            margin-bottom: 30px
+            padding-right: 0
+        &:last-child
+          flex: 0 0 66.5%
+          +r(1350)
+            flex: 1 0 auto
+          +r(767)
+            flex: 0 0 100%
+          .title
+            margin-bottom: 12px
+            +r(767)
+              margin-bottom: 25px
+
+
+  ol
+    margin-bottom: 30px
+    padding-left: 20px
+    list-style: decimal
+    +r(1600)
+      font-size: 14px
+    +r(767)
+      text-align: left
+      max-width: 300px
+      margin: 0 auto 20px
+
+  #code_form
+    max-width: 76%
+    display: flex
+    +r(1600)
+      max-width: 100%
+    +r(767)
+      max-width: 300px
+      flex-flow: wrap
+      margin:  0 auto
+    input:first-child
+      flex: 0 53%
+      border-radius: 2px 0 0 2px
+      +r(767)
+        flex: 0 0 100%
+        margin-bottom: 10px
+        border-radius: 2px
+    button
+      flex: 0 0 47%
+      margin-left: -2px
+      +r(767)
+        flex: 0 0 100%
+        max-width: 300px
+        margin-left: 0
+
+.my_activity
+  width: 66%
+  margin-top: 35px
+  margin-bottom: 15px
+  overflow: hidden
+  +r(1750)
+    width: 100%
+  +r(767)
+    margin-top: 0
+  td
+    padding: 15px 28px
+    border: 0
+
+  thead
+    border: 1px solid #2f3756
+    +r(767)
+      display: none
+    td
+      background: #2f3756
+  tbody
+    border: solid rgba(255, 255, 255, .1)
+    border-width: 0 1px 1px 1px
+    +r(767)
+      border: 0
+    tr
+      +r(767)
+        display: block
+        margin-bottom: 20px
+    td
+      padding: 5px 28px
+      +r(767)
+        display: block
+        background: #2f3756
+        width: 50% !important
+        min-width: 280px
+        margin: 0 auto 10px
+        padding: 10px 15px !important
+        text-align: center
+        letter-spacing: 1px
+      &:first-child
+        width: 38%
+      &:nth-child(2)
+        width: 37%
+    tr:first-child td
+      padding-top: 20px
+    tr:last-child td
+      padding-bottom: 25px
+
+.close_block
+  .title
+    margin-bottom: 5px
+  .text
+    margin-bottom: 32px
+#close_form
+  max-width: 350px
+  display: flex
+  +r(767)
+    margin: 0 auto
+    max-width: 300px
+    flex-flow: wrap
+  input:first-child
+    flex: 0 0 58%
+    border-radius: 2px 0 0 2px
+    &::-webkit-input-placeholder
+      color: rgba(255, 255, 255, .3 )
+    &::-moz-placeholder
+      color: rgba(255, 255, 255, .3 )
+    &:-moz-placeholder
+      color: rgba(255, 255, 255, .3 )
+    &:-ms-input-placeholder
+      color: rgba(255, 255, 255, .3 )
+    +r(767)
+      flex: 0 0 100%
+      margin-bottom: 10px
+      border-radius: 2px
+  button
+    flex: 0 0 42%
+    margin-left: -2px
+    background: $btn_danger
+    position: relative
+    +r(767)
+      margin-left: 0
+    &:after
+      content: ''
+      display: block
+      width: 100%
+      height: 100%
+      position: absolute
+      top: 0
+      left: 0
+      background: rgba(255, 255, 255, 0)
+      transition: all 0.25s ease-in-out
+    &:hover::after
+      background: rgba(255, 255, 255, 0.1)
+    +r(767)
+      flex: 0 0 100%
+      max-width: 300px
+
+
+
+

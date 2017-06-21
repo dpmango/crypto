@@ -1,0 +1,68 @@
+extends layout/main.pug
+
+block title
+    title Crypto
+
+block pagecontent
+    +header()
+    .page_wrap
+        +left_side()
+        .content_block
+            #content.modal_page
+                h1.page_title All modal windows
+                div
+                    button.modal_link.warning_btn Warning modal
+                    button.modal_link.receive_btn Receive modal
+                    button.modal_link.deposit_btn Deposit modal
+
+            +right_side()
+            +footer()
+
+
+    //modals
+    #warning_modal.modal_wrap
+        button.close_modal
+        .modal_content.text_center
+            p.title Warning
+            p.description.text Your api kei does not have rights to deposit or withdrawal
+            a.modal_link.check_link(href="") Check the rights
+
+    #deposit_modal.modal_wrap
+        button.close_modal
+        .modal_content.text_center
+            form
+                p.title Deposit
+                label.text
+                    span Wallet address
+                    input(type="text", name="key" value="rsX7eijFLDNLYdwtnNvCcRnVbCAASgfASq", class="form-control text_center")
+
+                p.send
+                    | Send the desired amount to our bitcoin address and the funds will
+                    | be credited according to the rules of the exchange.
+                button(type="submit") OK
+
+    #receive_modal.modal_wrap
+        button.close_modal
+        .modal_content.text_center
+            form
+                p.title Receive
+                .amount_block
+                    p.block_title Amount
+                    .change_input
+                        input(type="text", value="25", class="form-control", name="amount")
+                        .btns
+                            button.plus(type="button"): span
+                            button.minus(type="button"): span
+                .wallet_block
+                    p.block_title Your wallet
+                    input(type="text", name="key" value="rsX7eijFLDNLYdwtnNvCcRnVbCAASgfASq")
+                button(type="submit") Receive
+
+
+
+
+
+
+
+
+

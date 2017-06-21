@@ -1,0 +1,43 @@
+footer
+  display: flex
+  justify-content: space-between
+  align-items: stretch
+  flex: 1 1 100%
+  margin-top: auto
+  background: $footer
+  height: $footer_height
+  box-shadow: 0 -10px 72px rgba(0, 0, 0, 0.35)
+  z-index: 2
+  +r(1450)
+    height: $footer_height1450
+  +r(991)
+    flex-flow: wrap
+    height: $footer_height991
+  +r(767)
+    height: auto
+    flex-flow: wrap
+    padding: 10px 0
+  div
+    display: flex
+    padding: 0 38px 0px
+    color: #ffffff
+    font-size: 14px
+    font-weight: 100
+    letter-spacing: 0.5px
+    &:first-child
+      color: rgba(255, 255, 255, 0.5)
+    +r(991)
+      padding: 0 20px
+    +r(767)
+      flex: 0 0 100%
+      padding: 5px 15px
+      text-align: center
+    &:last-child
+      border-left: 2px solid #313852
+      +r(767)
+        border: 0px
+  p
+    margin: auto 0
+    +r(767)
+      margin: auto
+

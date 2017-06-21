@@ -1,0 +1,57 @@
+extends layout/main.pug
+
+block title
+    title Crypto
+
+block pagecontent
+    +header()
+    .page_wrap
+        +left_side()
+        .content_block
+            #content.terms_page
+                h1.page_title Terms
+                .block.terms_info
+                    h2 Terms of Service
+                    p
+                        | Cryptowatch ("the Service") is a market data service developed and
+                        | distributed by Nice Legs LLC ("we" or "us").
+                        | The Service is provided without warranty on an
+                        | "as is" and "as available" basis. Any part of the Service
+                        | may be changed or removed at any time without warning.
+                    p
+                        | By using or accessing the Service, you signify that you
+                        | have read and agreed to this Terms of Service document.
+                    h2.integrity Data Integrity
+                    p
+                        | We report market information that we derive directly from the APIs
+                        | (Application Programming Interfaces) provided by currency exchanges.
+                        | We do not manipulate the data except to abridge and/or summarize series of similar data points.
+                    h2 Account
+                    p
+                        | Cryptowatch can be accessed and used anonymously (without being logged into a Cryptowatch Account).
+                        | Accessing the Service when logged into an Account allows one to see a customized view
+                        | of the market which shows their personal trading data. There are two types of
+                        | Cryptowatch Accounts: Upgraded Accounts ("paid accounts") and Basic Accounts
+                        | ("free accounts"). Upgraded Accounts offer access to an integrated trading interface
+                        | in addition to the basic offering of a customized market view.
+                    h2.service Service Level Agreement
+                    p
+                        | We guarantee our Service to have a 99% availability on a monthly basis to
+                        | consumers who are logged into an Upgraded Account.
+                        | Availability is defined by a web client and data stream server being functional
+                        | and accessible at the URL of the Service.
+                    h2.refunds Refunds
+                    p
+                        | The Service is billed for in advance on a monthly basis and is non-refundable under normal conditions.
+                        | Payments may be made using either valid credit card transactions or Bitcoin transactions.
+                        | There will be no refunds for partial months of Service.
+
+            +right_side()
+            +footer()
+
+
+
+
+
+
+

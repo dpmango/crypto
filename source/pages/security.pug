@@ -1,0 +1,78 @@
+extends layout/main.pug
+
+block title
+    title Crypto
+
+block pagecontent
+    +header()
+    .page_wrap
+        +left_side()
+        .content_block
+            #content.security_page
+                h1.page_title Security
+                .block.flex_block.auth
+                    div
+                        p.title Multi-factor auth
+                        div.text
+                            p
+                                | We recommend enabling multi-factor authentication (MFA)
+                                | for your account.
+                            p
+                                | MFA adds a level of security to your account by requiring
+                                | physical access to a second device under your control.
+                                | Using a mobile app like Google Authenticator your device will
+                                | generate temporary passwords which will be required each
+                                | time you log in.
+
+                    div.auth_code
+                        div
+                            img(src="img/code.jpg", srcset="img/code@2x.jpg 2x" class="auth_img")
+                        div
+                            p.title To enable multi-factor auth
+                            ol.text
+                                li Scan the QR code in Google Authenticator
+                                li Enter the generated 6-digit passcode below
+                            form#code_form
+                                input(type="text", name="code", class="form-control")
+                                button(type="submit", class="form-control") Submit
+
+                .block
+                    p.title Account activity
+                    table.my_activity
+                        thead
+                            tr
+                                td Timestamp
+                                td Action
+                                td IP Address
+                        tbody
+                            tr
+                                td Apr 15, 2017 at 3:53pm UTC
+                                td Create account
+                                td 94.188.15.151
+                            tr
+                                td Apr 15, 2017 at 3:53pm UTC
+                                td Create account
+                                td 94.188.15.151
+                            tr
+                                td Apr 15, 2017 at 3:53pm UTC
+                                td Create account
+                                td 94.188.15.151
+
+                .block.close_block
+                    p.title Close account
+                    p.text
+                        | If you wish, you may permanently close your account and purge all
+                        | of your information from the system. There is no way to undo this
+                    form#close_form
+                        input(type="password", name="password", placeholder="Password", class="form-control")
+                        button(type="submit", class="form-control") Close account
+
+            +right_side()
+            +footer()
+
+
+
+
+
+
+

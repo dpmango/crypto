@@ -1,0 +1,42 @@
+extends layout/main.pug
+
+block title
+    title Crypto
+
+    -
+        var keys = [{name: 'Bitfinex', img: 'img/b1.png', srcset: 'img/b1@2x.png 2x'},
+                    {name: 'BTC-e', img: 'img/b2.png', srcset: 'img/b2@2x.png 2x'},
+                    {name: 'Bitstamp', img: 'img/b3.png', srcset: 'img/b3@2x.png 2x'},
+                    {name: 'Kraken', img: 'img/b3.png', srcset: 'img/b3@2x.png 2x'},
+                    {name: 'BTC-e', img: 'img/b2.png', srcset: 'img/b2@2x.png 2x'},
+                    {name: 'Bitstamp', img: 'img/b3.png', srcset: 'img/b3@2x.png 2x'}]
+
+
+block pagecontent
+    .page_wrap.sign_page
+        .set_account.text_center
+            .logo
+                img(src="img/logo_b.png", srcset="img/logo_b@2x.png 2x")
+            h1.text_center Set Up Account
+            p Paste in your API keys to connect to your exchange accounts
+            p.text Don't worry, we store your keys under strong encryption
+            form#set_account
+                .api_keys_block
+                        each key in keys
+                            .api_key
+                                .block_body
+                                    .top_line
+                                        p.title= key.name
+                                        img(src = key.img, srcset = key.srcset)
+                                    .inputs
+                                        input(type="text", name="api-key", placeholder="API Key", class="form-control")
+                                        input(type="text", name="api-secret", placeholder="API Secret", class="form-control")
+                                    .bottom_line.clearfix
+                                        a.text(href="") Where do I generate a key?
+                .btn_block
+                    button(type="submit") Add API keys
+                    a(href="successfully.html") Skip this step
+
+block scripts
+    script(src="lib/jquery/jquery.js")
+    script(src="js/main.js")

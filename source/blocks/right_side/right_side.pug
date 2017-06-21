@@ -1,0 +1,153 @@
+mixin right_side(without_key)
+	.right_side
+		button.mobile Order
+			i.arrow
+		.right_modules
+			.right_module.module.new-order
+				p.module_title New order
+				ul.module_tab
+					li
+						a.active(href="#market") Market
+					li
+						a(href="#limit") Limit
+
+
+				.module_tab_content
+					#market.active
+						form#new_order_form
+							.price_block
+								p.block_title Price
+								.change_input
+									input(type="text", value="1500 $", class="form-control", name="price")
+									.btns
+										button.plus(type="button"): span
+										button.minus(type="button"): span
+
+							.amount_block
+								p.block_title Amount
+								.change_input
+									input(type="text", value="25", class="form-control", name="amount")
+									.btns
+										button.plus(type="button"): span
+										button.minus(type="button"): span
+
+							button(type="submit") Place order
+
+					#limit
+						p limit
+
+			.right_module.buy_orders
+				p.module_title Buy orders
+				.table_wrap
+					div
+						table.table
+							thead
+								tr
+									td BTC
+									td USD
+									td Price
+							tbody
+								tr
+									td 1.094
+									td 15 242.42
+									td: span.active 521.32
+								tr
+									td 1.094
+									td 15 242.42
+									td: span.active 521.32
+								tr
+									td 1.094
+									td 15 242.42
+									td: span.inactive  521.32
+								tr
+									td 1.094
+									td 15 242.42
+									td: span.inactive 521.32
+								tr
+									td 1.094
+									td 15 242.42
+									td: span.active 521.32
+								tr
+									td 1.094
+									td 15 242.42
+									td: span.inactive 521.32
+						.hide_table
+							table.table
+								tbody
+									tr
+										td 1.094
+										td 15 242.42
+										td: span.inactive 521.32
+									tr
+										td 1.094
+										td 15 242.42
+										td: span.inactive 521.32
+									tr
+										td 1.094
+										td 15 242.42
+										td: span.inactive 521.32
+
+				button.more(type="button")
+					| More
+					i.arrow_down
+
+			.right_module.sell_orders
+				p.module_title Sell orders
+				.table_wrap
+					div
+						table.table
+							thead
+								tr
+									td BTC
+									td USD
+									td Price
+							tbody
+								tr
+									td 1.094
+									td 15 242.42
+									td: span.active 521.32
+								tr
+									td 1.094
+									td 15 242.42
+									td: span.active 521.32
+								tr
+									td 1.094
+									td 15 242.42
+									td: span.inactive  521.32
+								tr
+									td 1.094
+									td 15 242.42
+									td: span.inactive 521.32
+								tr
+									td 1.094
+									td 15 242.42
+									td: span.active 521.32
+								tr
+									td 1.094
+									td 15 242.42
+									td: span.inactive 521.32
+								tr
+									td 1.094
+									td 15 242.42
+									td: span.inactive  521.32
+						.hide_table
+							table.table
+								tbody
+									tr
+										td 1.094
+										td 15 242.42
+										td: span.inactive 521.32
+									tr
+										td 1.094
+										td 15 242.42
+										td: span.inactive 521.32
+									tr
+										td 1.094
+										td 15 242.42
+										td: span.inactive 521.32
+
+				button.more(type="button")
+					| More
+					i.arrow_down
+
+

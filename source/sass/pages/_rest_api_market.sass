@@ -1,0 +1,123 @@
+#content.api_market
+  padding-right: 16px
+.rest_api_info
+  align-items: stretch
+  +r(767)
+    flex-flow: wrap
+  .nav
+    display: flex
+    flex: 0 0 205px
+    border-radius: 4px 0 0 4px
+    +r(767)
+      flex: 0 0 100%
+      display: block
+      margin-bottom: 15px
+    .mobile_tabs
+      @extend .mobile
+      display: none
+      background: #252d4a
+      border-radius: 4px
+      +r(991)
+        display: none
+      +r(767)
+        display: block
+
+    div
+      flex: 1 1 100%
+      padding: 30px 25px 30px 25px
+      background: #222b4a
+      width: 100%
+      @media (min-width: 768px)
+        display: block !important
+      +r(767)
+        display: none
+        padding: 20px 70px
+        background: transparent
+      +r(500)
+        padding: 20px
+
+
+    p
+      margin-bottom: 7px
+      font-size: 20px
+      +r(767)
+        background: #222b4a
+        padding: 10px 20px 10px 20px
+        border-radius: 4px
+    ul
+      margin-bottom: 25px
+      +r(767)
+        margin-left: 40px
+        margin-bottom: 20px
+        background: #222b4a
+        border-radius: 4px
+      li
+        margin-bottom: 3px
+        +r(767)
+          padding: 7px 15px 7px 15px
+        &.active
+          +r(767)
+            background: $active
+      a
+        color: $text
+        font-size: 15px
+        letter-spacing: 0.5px
+        +r(767)
+          color: white
+          display: block
+        &:hover
+          color: white
+
+  .nav_content
+    flex: 1 1 auto
+    padding: 30px 50px 30px 40px
+    background: #252d4a
+    border-radius: 0 4px 4px 0
+    box-shadow: -10px 0px 30px rgba(0,0,0, .2)
+    color: rgba(255, 255, 255, 0.7)
+    font-size: 15px
+    +r(767)
+      flex: 0 0 100%
+      padding: 20px
+      margin-bottom: 15px
+      border-radius: 4px
+    & > div
+      display: none
+      &.active
+        display: block
+    h2
+      margin-bottom: 20px
+      font-size: 20px
+      color: white
+    .text_block
+      margin-bottom: 40px
+      p
+        margin-bottom: 15px
+        line-height: 1.5
+      .important
+        background: #495068
+        border-radius: 2px
+        padding: 0 2px
+    pre
+      margin: 23px 0px 27px 0
+      padding: 18px 30px
+      border-radius: 4px
+      border: 1px solid rgba(255, 255, 255, 0.1)
+      font-size: 15px
+      line-height: 1.6
+      white-space: pre-wrap
+      white-space: -moz-pre-wrap
+      white-space: -pre-wrap
+      white-space: -o-pre-wrap
+      word-wrap: break-word
+
+    .text_block pre ~ p
+        margin-bottom: 9px
+    .bottom_text
+      margin-top: 30px
+      p
+        margin-bottom: 0
+    .ohlc
+      h2
+        margin-bottom: 10px
+

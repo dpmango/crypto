@@ -1,0 +1,519 @@
+$header_height: 110px
+$header_height1450: 90px
+$header_height991: 70px
+
+$footer_height: 90px
+$footer_height1450: 90px
+$footer_height991: 70px
+
+
+
+=label($bg)
+  display: inline-block
+  min-width: 97px
+  max-width: 130px
+  text-align: center
+  margin-right: -35px
+  position: relative
+  padding: 1px 3px
+  border-radius: 2px
+  font-size: 15px
+  background: $bg
+  &:after
+    content: ''
+    display: block
+    width: 0
+    height: 0
+    position: absolute
+    top: 100%
+    right: 0
+    border-top: 10px solid darken($bg, 25%)
+    border-right: 10px solid transparent
+
+=r($width)
+  @media (max-width: #{$width}px)
+    @content
+
+=md
+  @media (max-width: 1199px)
+    @content
+
+=retina
+  @media only screen and (-Webkit-min-device-pixel-ratio: 1.5),
+  only screen and (-moz-min-device-pixel-ratio: 1.5),
+  only screen and (-o-min-device-pixel-ratio: 3/2),
+  only screen and (min-device-pixel-ratio: 1.5)
+    @content
+
+
+=retinaNav($el, $ico, $ico2x, $x, $y)
+  &.#{$el}
+    .ico
+      @include sprite($ico)
+      +retina
+        @include sprite2x($ico2x)
+        +retinaNavPos($x, $y)
+
+
+=retinaNavPos($x, $y)
+  background-position: $x $y
+
+
+
+
+%tab_block
+  opacity: 0
+  position: absolute
+  top: 0
+  width: 100%
+  z-index: 1
+  &.active
+    opacity: 1
+    z-index: 2
+    transition: opacity .25s ease-in-out
+    position: relative
+
+
+*
+  box-sizing: border-box
+  font-family: 'helveticaneuecyr'
+  /*word-break: break-all*/
+
+body
+  font-family: 'helveticaneuecyr'
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  color: #fff
+  font-weight: 100
+  line-height: 1.4
+  font-size: 15px
+  +r(1600)
+    font-size: 14px
+
+a, input, button, .textarea
+  transition: all .25s ease-in-out
+
+button, input[type="submit"]
+  cursor: pointer
+
+a
+  color: white
+  &:focus, &:hover
+    color: #fff
+
+img
+  max-width: 100%
+h1, h2, h3, h4, h5
+  font-weight: 100
+  letter-spacing: 1px
+
+.form-control,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+textarea
+  display: block
+  width: 100%
+  height: 50px
+  padding: 6px 12px
+  line-height: 1.42857143
+  color: #fff
+  border-radius: 2px
+  background: transparent
+  border: 1px solid rgba(255, 255, 255, 0.1)
+  letter-spacing: 1px
+  transition: all 0.25s ease-in-out
+  &:focus
+    border-color: white
+  &::-webkit-input-placeholder
+    color: rgba(255, 255, 255, .4 )
+  &::-moz-placeholder
+    color: rgba(255, 255, 255, .4 )
+  &:-moz-placeholder
+    color: rgba(255, 255, 255, .4 )
+  &:-ms-input-placeholder
+    color: rgba(255, 255, 255, .4 )
+
+textarea
+  height: auto
+  max-width: 100%
+
+.table
+  width: 100%
+  max-width: 100%
+  td
+    padding: 7px 12px
+    vertical-align: middle
+
+.hide_table
+  display: none
+
+
+.text_center
+  text-align: center
+.text_right
+  text-align: right
+
+p
+  margin-bottom: 10px
+
+strong
+  font-weight: 300
+
+label
+  display: block
+
+.clearfix
+  &:after
+    content: ''
+    display: table
+    clear: both
+
+button[type="submit"],
+input[type="submit"],
+.add_point,
+.modal_link
+  display: block
+  width: 100%
+  height: 50px
+  line-height: 1.42857143;
+  padding: 6px 20px
+  background: $btn
+  color: white
+  cursor: pointer
+  border-radius: 2px
+  position: relative
+  outline: none
+  border: 0
+  &:hover
+    background: $inactive
+  +r(991)
+    max-width: 280px
+    margin-left: auto
+    margin-right: auto
+a.modal_link
+  line-height: 38px
+
+
+.fab
+  border-radius: 50%
+  margin: 0
+  padding: 20px
+
+
+.material
+  position: relative
+  color: white
+  margin: 20px auto
+  height: 400px
+  width: 500px
+  background: #f45673
+
+
+
+.page_wrap
+  display: flex
+  min-height: calc(100vh - #{$header_height})
+  +r(1450)
+    min-height: calc(100vh - #{$header_height1450})
+  +r(991)
+    min-height: calc(100vh - #{$header_height991})
+    flex-flow: wrap
+
+  .content_block
+    display: flex
+    flex-flow: wrap
+    flex: 1 1 100%
+
+
+#content
+  flex: 9 9
+  padding: 45px 40px 30px 30px
+  background: $content
+  min-height: calc(100vh - #{$header_height} - #{$footer_height})
+  +r(1450)
+    padding: 30px 20px
+    min-height: calc(100vh - #{$header_height1450} - #{$footer_height1450})
+  +r(991)
+    flex: 1 1 100%
+    min-height: calc(100vh - #{$header_height991} - #{$footer_height991})
+
+
+h1.page_title
+  color: white
+  font-size: 28px
+  margin-bottom: 35px
+  +r(1450)
+    font-size: 24px
+    margin-bottom: 20px
+  +r(1200)
+    font-size: 22px
+  +r(767)
+    text-align: center
+
+.mobile
+  display: none
+  width: 100%
+  position: relative
+  text-align: left
+  background: transparent
+  color: white
+  font-size: 17px
+  padding: 20px 50px 20px 20px
+  border-bottom: 2px solid #222943
+  font-weight: 100
+  +r(991)
+    display: block
+  i
+    position: absolute
+    top: 50%
+    right: 10px
+    font-size: 20px
+
+
+
+
+.module
+    margin-bottom: 30px
+
+.module_title
+  font-size: 22px
+  letter-spacing: 0.5px
+  margin-bottom: 18px
+  color: white
+  +r(767)
+    text-align: center
+
+.module_tab_content
+  position: relative
+  & > div
+    @extend %tab_block
+    z-index: -1
+    &.active
+      z-index: 1
+
+
+
+i.arrow_down, i.arrow
+  display: inline-block
+  height: 10px
+  width: 15px
+  margin: -6px 10px 0
+  transition: all .25s ease-in-out
+  cursor: pointer
+  background: url(../img/arrow.png) center center no-repeat
+  background-size: contain
+  opacity: 0.5
+  +r(991)
+    opacity: 1
+  &:hover
+    opacity: 1
+  &.top
+    transform-origin: 50% 50%
+    transform: rotate(180deg)
+.open i
+  transform-origin: 50% 50%
+  transform: rotate(180deg)
+
+.flex_block
+  display: flex
+
+.block
+  margin-bottom: 25px
+  padding: 30px 33px
+  border-radius: 6px
+  background-color: #282f4b
+  +r(1450)
+    padding: 20px
+  .title
+    font-size: 23px
+    margin-bottom: 18px
+    color: white
+    +r(1450)
+      margin-bottom: 15px
+    +r(1200)
+      font-size: 20px
+    +r(767)
+      text-align: center
+  p
+    margin-bottom: 14px
+    line-height: 1.5
+    letter-spacing: 0.5px
+    word-spacing: 0.5px
+    +r(767)
+      text-align: center
+
+.text
+  color: $text
+  font-size: 15px
+  +r(1600)
+    font-size: 14px
+  +r(767)
+    text-align: center
+  a
+    color: inherit
+    &:hover
+      color: white
+      text-decoration: none
+
+a.text
+  color: $text
+  font-size: 15px
+  +r(1600)
+    font-size: 14px
+  &:hover, &:focus
+    color: white
+    text-decoration: none
+
+.label
+  &.working
+    +label($inactive)
+  &.error
+    +label($active)
+  &.check_rights
+    +label($check)
+
+
+#content.faq
+  padding-top: 50px
+  padding-right: 30px
+  h1
+    margin-bottom: 20px
+
+.dropdown_block
+  margin-bottom: 8px
+  border-radius: 4px
+  background: #252D4A
+  color: rgba(255, 255, 255, 0.8)
+  font-size: 17px
+  letter-spacing: 0.5px
+  word-spacing: -0.5px
+  +r(1450)
+    font-size: 16px
+  .title
+    position: relative
+    padding: 25px 50px 23px 28px
+    margin-bottom: 0
+    cursor: pointer
+    border-radius: 4px
+    transition: all 0.25s ease-in-out
+    +r(1450)
+      padding: 15px 50px 15px 15px
+    +r(767)
+      padding-right: 40px
+    &:after
+      content: ''
+      position: absolute
+      top: 50%
+      right: 23px
+      display: inline-block
+      height: 10px
+      width: 15px
+      margin: -6px 10px 0
+      transition: all .25s ease-in-out
+      cursor: pointer
+      background: url(../img/arrow.png) center center no-repeat
+      background-size: contain
+      opacity: 0.5
+    +r(767)
+      &:after
+        right: 15px
+    &:hover
+      background: $active
+    &:hover:after
+      opacity: 1
+
+
+
+  .dropdown_content
+    display: none
+    margin-bottom: 21px
+    margin-top: -4px
+    border-radius: 0 0 4px 4px
+    padding: 34px 50px 23px 25px
+    border: solid rgba(255, 255, 255, 0.1)
+    border-width: 0 1px 1px 1px
+    line-height: 1.6
+    font-size: 15px
+    letter-spacing: 0.5px
+    word-spacing: 0.5px
+    +r(1450)
+      padding: 20px 50px 5px 15px
+    +r(767)
+      font-size: 14px
+      padding-right: 15px
+    *
+      max-width: 98%
+      color: rgba(255, 255, 255, .7)
+      margin-bottom: 15px
+      +r(767)
+        max-width: 100%
+  &.opened
+    .title
+      background: $active
+      &:after
+        transform: rotate(180deg)
+        opacity: 1
+
+
+.change_input
+  position: relative
+  input[type="text"]
+    text-align: center
+    font-size: 15px
+    border-width: 1px
+    padding: 0px 55px
+    line-height: 50px
+    pointer-events: none
+    +md
+      padding-left: 45px
+      padding-right: 45px
+      line-height: 40px
+  .btns
+    button
+      position: absolute
+      background: transparent
+      top: 0px
+      height: 50px
+      width: 50px
+      border: 0
+      &:hover
+        background: $active
+     
+      span
+        display: block
+        margin: 0 auto
+      &.minus
+        left: 0
+        border-right: 1px solid rgba(255, 255, 255, 0.1)
+        border-radius: 2px 0 0 2px
+        span
+          @include sprite($minus)
+          +retina
+            @include sprite2x($minus2x)
+            background-position: 89px 22px;
+
+
+      &.plus
+        right: 0
+        border-left: 1px solid rgba(255, 255, 255, 0.1)
+        border-radius: 0 2px 2px 0
+        span
+          @include sprite($plus)
+          +retina
+            @include sprite2x($plus2x)
+            background-position: 145px 22px
+
+
+
+
+
+
+
+
+
+
+
+
+

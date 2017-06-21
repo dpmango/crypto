@@ -1,0 +1,37 @@
+extends layout/main.pug
+
+block title
+    title Crypto
+
+block pagecontent
+    +header()
+    .page_wrap
+        +left_side()
+        .content_block
+            #content.account_page
+               h1.page_title Account
+
+               .block.info
+                   p.title Basic Info
+                   div
+                       p mail@gmail.com
+                       p Joined Apr 15, 2017
+
+               .block.change_pass
+                   p.title Change password
+                   form
+                       input(type="password", name="password", placeholder="Current password", class="form-control")
+                       input(type="password", name="new-password", placeholder="New password", class="form-control")
+                       button(type="submit", class="form-control") Change password
+
+               .block.phone
+                   p.title Phone
+                   form
+                       p.form_text Save your number to receive price and volume alerts on your phone
+                       input(type="tel", name="tel", placeholder="Phone number", class="form-control")
+                       button(type="submit", class="form-control") Add phone
+
+
+
+            +right_side()
+            +footer()

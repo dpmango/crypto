@@ -1,0 +1,97 @@
+extends layout/main.pug
+
+block title
+    title Crypto
+
+block pagecontent
+    +header()
+    .page_wrap
+        +left_side()
+        .content_block
+            #content.api_market
+                h1.page_title Public Market REST API
+                .rest_api_info.flex_block
+                    .nav
+                        button.mobile_tabs
+                            | Information
+                            i.arrow
+                        div
+                            p  Intro
+                            ul
+                                li: a(href="#rate_limit") Rate Limit
+                                li: a(href="#markets") Markets
+                            p Individual
+                            ul
+                                li: a(href="#price") Price
+                                li: a(href="#summary") Summary
+                                li: a(href="#trades") Trades
+                                li: a(href="#order_book") Order Book
+                                li: a(href="#ohlc") OHLC
+                            p Global
+                            ul
+                                li: a(href="") Prices
+                                li: a(href="") Summaries
+                            p Contact
+                    .nav_content
+                        #rate_limit(class="active")
+                            div.text_block.rate_limit
+                                h2.title Rate limit
+                                p
+                                    | The API is rate limited by a CPU allowance, rather than a fixed number of calls per time window.
+                                    | Some API requests take longer to fetch than others, so these cost more allowance.
+                                p
+                                    | Each client has an allowance of 2000000000 nanoseconds (2 seconds) of CPU time per hour.
+                                    | The allowance is reset every hour on the hour.
+                                p
+                                    | Each request returns information about your allowance in addition to the request result:
+                                pre
+                                    | {
+                                    |     "result": {
+                                    |         ...
+                                    |     },
+                                    |    "allowance": {
+                                    |        "cost": 16767,
+                                    |        "remaining": 1999983233
+                                    |    },
+                                    | }
+                                p
+                                    | The <span class="important">cost</span> is how many nanoseconds that request took in nanoseconds,
+                                    | and remaining is how many nanoseconds <span class="important">remain</span> in your allowance.
+                                    | You can use this information, along with the current time,
+                                    | to have your application self-regulate its request rate.
+                                p
+                                    | The API server will return a 429 response (Too Many Requests) if you have spent your allowance completely.
+                                div.bottom_text
+                                    p
+                                        | These are the values used to identify markets in all Cryptowatch URLs,
+                                        | including our main app and this API’s individual market endpoints.
+                                    p
+                                        | You can also get the supported markets for only a specific exchange. The result looks the same as above.
+                            div.ohlc
+                                h2.title OHLC
+                                p Returns a market’s OHLC candlestick data. Returns data as lists of lists of numbers for each time period integer.
+
+                        #markets
+                            p markets
+                        #price
+                            p price
+                        #summary
+                            p summary
+                        #trades
+                            p trades
+                        #order_book
+                            p order_book
+                        #ohlc
+                            p ohlc
+
+
+
+            +right_side()
+            +footer()
+
+
+
+
+
+
+

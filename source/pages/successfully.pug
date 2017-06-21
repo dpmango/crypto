@@ -1,0 +1,16 @@
+extends layout/main.pug
+
+block title
+    title Crypto
+
+block pagecontent
+    .page_wrap.sign_page
+        .successfully.text_center
+            .logo
+                img(src="img/logo_b.png", srcset="img/logo_b@2x.png 2x")
+            h1.text-center Successfully
+            p.text Please check your email for further instructions
+            img.email_img(src="img/envelope.png", srcset="img/envelope@2x.png 2x")
+block scripts
+    script(src="lib/jquery/jquery.js")
+    script(src="js/main.js")

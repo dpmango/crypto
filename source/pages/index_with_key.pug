@@ -1,0 +1,112 @@
+extends layout/main.pug
+
+block title
+	title Crypto
+
+block pagecontent
+	+header()
+	.page_wrap
+		+left_side()
+		.content_block
+			#content.main_page
+				.graph.module
+					p.exchange_text.text Bitfinex Real Time
+					.top_line.flex_block
+						button.mobile
+							span USD/BTC
+							i.arrow
+						ul.tabs_chart.module_tab
+							li: a.active(href="#usd_btc") USD/BTC
+							li: a(href="#ltc_usd") LTC/USD
+							li: a(href="#rpx_eur") RPX/EUR
+							li: a(href="#etc_btc") ETC/BTC
+
+						.exchange_data
+							span Friday, Mar 31, 8:32:12
+							span
+								| USD Volume
+								|
+								|
+								span.value 1,321
+							span
+								| Price:
+								|
+								|
+								span.value 55,22142
+
+					.tabs_chart_content.module_tab_content
+						#usd_btc.active
+							#usd_btc_chart
+							button.add_point(data-key="usd_btc_chart") Add point
+						#ltc_usd
+							#ltc_usd_chart
+							button.add_point(data-key="ltc_usd_chart") Add point
+						#rpx_eur
+							#rpx_eur_chart
+							button.add_point(data-key="rpx_eur_chart") Add point
+						#etc_btc
+							#etc_btc_chart
+							button.add_point(data-key="etc_btc_chart") Add point
+
+
+				.modules
+					.module.orders
+						p.module_title My orders
+						table.table
+							thead
+								tr
+									td Size
+									td Type
+									td Price
+									td time
+									td Status
+							tbody
+							- for (var x = 0; x < 4; x++)
+								tr
+									td 13.0402 BTC
+									td Limit buy
+									td 1240 BTC/USD
+									td 12 Jan 16:23
+									td.text_right: button(trpe="button", class="cancel") Cancel
+					.module.exchanges
+						.clearfix
+							p.module_title Cryptocurrency Exchanges
+							a.more_orders(href="") See more
+						.exchange_block
+							.flex_block
+								.exchange: a(href=""): img(src="img/b1.png",  srcset='img/b1@2x.png 2x', alt="")
+								.exchange: a(href=""): img(src="img/b2.png", srcset='img/b2@2x.png 2x', alt="")
+								.exchange: a(href=""): img(src="img/b44.png", srcset='img/b44@2x.png 2x', alt="")
+								.exchange: a(href=""): img(src="img/b3.png", srcset='img/b3@2x.png 2x', alt="")
+						.exchange_block
+							.flex_block
+								.exchange: a(href=""): img(src="img/b1.png",  srcset='img/b1@2x.png 2x', alt="")
+								.exchange: a(href=""): img(src="img/b2.png", srcset='img/b2@2x.png 2x', alt="")
+								.exchange: a(href=""): img(src="img/b44.png", srcset='img/b44@2x.png 2x', alt="")
+								.exchange: a(href=""): img(src="img/b3.png", srcset='img/b3@2x.png 2x', alt="")
+
+
+
+			+right_side()
+			+footer()
+block scripts
+	script(src="lib/jquery/jquery.js")
+	script(src="lib/canvasjs/canvasjs.min.js")
+	script(src="js/main.js")
+	script(src="js/exchange_graph.js")
+	script(src="js/graph.js")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

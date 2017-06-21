@@ -1,0 +1,155 @@
+mixin header(without_key)
+
+
+	-
+		var exchanges = {bitfinex: [{chart_name: 'bitfinex_usd_btc_min', change: 1},
+									{chart_name: 'bitfinex_eur_xrp_min', change: 1},
+									{chart_name: 'bitfinex_btc_xrp_min', change: 1},
+									{chart_name: 'bitfinex_etc_xrp_min', change: 0},
+									{chart_name: 'bitfinex_xau_xhp_min', change: 1},
+									{chart_name: 'bitfinex_cny_xrp_min', change: 1},
+									{chart_name: 'bitfinex_usd_xrp_min', change: 0},
+									{chart_name: 'bitfinex_btc_cny_min', change: 0},
+									{chart_name: 'bitfinex_eur_btc_min', change: 1},
+									{chart_name: 'bitfinex_usd_xhp_min', change: 0},
+									{chart_name: 'bitfinex_eur_usd_min', change: 1}],
+							poloniex: [{chart_name: 'poloniex_usd_btc_min', change: 1},
+									{chart_name: 'poloniex_eur_xrp_min', change: 1},
+									{chart_name: 'poloniex_btc_xrp_min', change: 1},
+									{chart_name: 'poloniex_etc_xrp_min', change: 0},
+									{chart_name: 'poloniex_xau_xhp_min', change: 1},
+									{chart_name: 'poloniex_cny_xrp_min', change: 1},
+									{chart_name: 'poloniex_usd_xrp_min', change: 0},
+									{chart_name: 'poloniex_btc_cny_min', change: 0},
+									{chart_name: 'poloniex_eur_btc_min', change: 1},
+									{chart_name: 'poloniex_usd_xhp_min', change: 0},
+									{chart_name: 'poloniex_eur_usd_min', change: 1}],
+							bithumb: [{chart_name: 'bithumb_usd_btc_min', change: 1},
+									{chart_name: 'bithumb_eur_xrp_min', change: 1},
+									{chart_name: 'bithumb_btc_xrp_min', change: 1},
+									{chart_name: 'bithumb_etc_xrp_min', change: 0},
+									{chart_name: 'bithumb_xau_xhp_min', change: 1},
+									{chart_name: 'bithumb_cny_xrp_min', change: 1},
+									{chart_name: 'bithumb_usd_xrp_min', change: 0},
+									{chart_name: 'bithumb_btc_cny_min', change: 0},
+									{chart_name: 'bithumb_eur_btc_min', change: 1},
+									{chart_name: 'bithumb_usd_xhp_min', change: 0},
+									{chart_name: 'bithumb_eur_usd_min', change: 1}],
+							bitFlyer: [{chart_name: 'bitFlyer_usd_btc_min', change: 1},
+									{chart_name: 'bitFlyer_eur_xrp_min', change: 1},
+									{chart_name: 'bitFlyer_btc_xrp_min', change: 1},
+									{chart_name: 'bitFlyer_etc_xrp_min', change: 0},
+									{chart_name: 'bitFlyer_xau_xhp_min', change: 1},
+									{chart_name: 'bitFlyer_cny_xrp_min', change: 1},
+									{chart_name: 'bitFlyer_usd_xrp_min', change: 0},
+									{chart_name: 'bitFlyer_btc_cny_min', change: 0},
+									{chart_name: 'bitFlyer_eur_btc_min', change: 1},
+									{chart_name: 'bitFlyer_usd_xhp_min', change: 0},
+									{chart_name: 'bitFlyer_eur_usd_min', change: 1}],
+		}
+
+
+
+
+	header
+		.top
+			.logo
+				a(href="index.html")
+					img(src="img/logo.png", srcset="img/logo@2x.png 2x")
+					p.title Crypto
+						span Trader
+			.mobile_btn
+				button(type="button")
+					.hamburger.hamburger--arrow.js-hamburger
+						.hamburger-box
+							.hamburger-inner
+
+		.left-block
+			.exchange_select
+				div
+					a.active(href="#bitfinex")
+						span Bitfinex
+					i.arrow
+				ul.exchanges_list
+					li: a(href="#poloniex") Poloniex
+					li: a(href="#bithumb") Bithumb
+					li: a(href="#bitFlyer") bitFlyer
+
+
+
+			each value, index in exchanges
+				.charts(id = index)
+					.flex_block.charts_block
+						each chart in value
+							.chart
+								div
+									.top_data.flex_block
+										div
+											p.currency USD / BTC
+											p.trader CryptoTrader / Bitfinex
+										div
+											p.change_value(class = chart.change ? '' : 'decline') +54.42%
+											p.currency_value 25.19
+									div.graph_min(id = chart.chart_name)
+									.bottom_data.flex_block
+										p H 42.00
+										p L 25.66
+										p H 341.521
+						.chart.add
+							div
+								button.add_btn
+
+			.crypto_info
+				button.mobile Crypto information
+					i.arrow.top
+				div
+					.price
+						div
+							span.value 1 252
+							span.text Price
+
+					.change
+						div
+							span.value +54.42%
+							span.text 24h Change
+
+					.volume
+						div
+							span.value 111 695
+							span.text 24h Volume
+
+
+
+		.right-block
+			if !without_key
+				.balans.header_dropdown
+					div
+						.info
+							span.sum 1 600 $
+							span.text Your balance
+						i.arrow_down
+					ul
+						li: a(href="") balanc
+						li: a(href="") balanc
+
+			else
+				div.import_key
+					p Import API key to trade on Bitfinex
+
+			.cabinet.header_dropdown
+				div
+					span.photo(style={'background-image': 'url(img/user.png)'})
+					span.name George Pertov
+					i.arrow_down
+				ul
+					li: a(href="account.html") Account
+					li: a(href="sign_in.html") Log out
+
+			.log_out
+				a(href="sign_in.html"): span Log out
+
+
+
+
+
+

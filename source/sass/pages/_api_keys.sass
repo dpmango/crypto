@@ -1,0 +1,124 @@
+.api_keys_page
+  .page_title
+    margin-bottom: 10px
+.display_currency
+  margin-bottom: 38px
+  font-size: 16.5px
+  letter-spacing: 0.2px
+  a
+    padding: 0 5px
+    color: inherit
+    &:hover
+      color: $active
+      text-decoration: none
+
+.api_keys_block
+    display: flex
+    flex-flow: wrap
+    margin: 0 -14px
+    +r(767)
+      margin: 0
+    .api_key
+      flex: 0 0 33.33%
+      padding: 0 15px 25px 15px
+      text-align: left
+      +r(1750)
+        flex: 0 0 50%
+      +r(991)
+        min-width: 350px
+      +r(750)
+        flex: 0 0 100%
+      +r(767)
+        margin: 0 auto
+      +r(400)
+        min-width: 0
+        flex: 0 0 100%
+        padding: 0 0 20px 0
+      form, .block_body
+        height: 100%
+        padding: 25px 25px 20px
+        border-radius: 2px
+        background-color: #282F4B
+      .top_line
+        margin-bottom: 20px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-wrap: nowrap
+        @media (max-width: 1200px) and (min-width: 992px)
+          flex-wrap: wrap
+          margin-bottom: 10px
+        +r(767)
+          flex-wrap: wrap
+          margin-bottom: 10px
+      .title
+        font-size: 22px
+        padding-right: 10px
+        margin-bottom: 0
+        letter-spacing: 0.5px
+        +r(1750)
+          font-size: 20px
+        @media (max-width: 1200px) and (min-width: 992px)
+          width: 100%
+          margin-bottom: 10px
+          text-align: center
+        +r(767)
+          width: 100%
+          margin-bottom: 10px
+          text-align: center
+      img
+        max-width: 120px
+        @media (max-width: 1200px) and (min-width: 992px)
+          margin: 0 auto 15px
+        +r(767)
+          margin: 0 auto 15px
+          order: -1
+      .inputs
+        margin-bottom: 25px
+      input
+        margin-bottom: 10px
+        &::-webkit-input-placeholder
+          color: rgba(255, 255, 255, .3 )
+        &::-moz-placeholder
+          color: rgba(255, 255, 255, .3 )
+        &:-moz-placeholder
+          color: rgba(255, 255, 255, .3 )
+        &:-ms-input-placeholder
+          color: rgba(255, 255, 255, .3 )
+
+      .bottom_line
+        display: flex
+        justify-content: space-between
+        +r(1750)
+          display: block
+        & > div
+          &:first-child
+            flex: 1 1 auto
+            padding-right: 10px
+            +r(1750)
+              margin-bottom: 15px
+          &:last-child
+            text-align: right
+            flex: 1 1 auto
+            min-width: 204px
+
+        .where
+          font-size: 14px
+
+        .edit
+          display: inline-block
+          height: auto
+          width: auto
+          line-height: 1.4
+          margin-right: 5px
+          border-radius: 2px
+          padding: 3px 23px
+          font-size: 14px
+          background: #3b425c
+          &:hover
+            background: $active
+          +r(1750)
+            float: left
+
+
+

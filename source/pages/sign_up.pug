@@ -1,0 +1,37 @@
+extends layout/main.pug
+
+block title
+    title Crypto
+
+block pagecontent
+    .page_wrap.sign_page
+        .form_block
+            .logo
+                img(src="img/logo_b.png", srcset="img/logo_b@2x.png 2x")
+            h1.text_center Sign Up
+            form#sign-up(class="login_form")
+                div.email
+                    input(type="email", name="email", placeholder="E-mail")
+                div.password
+                    input(type="password", name="password", placeholder="Password")
+                div.password
+                    input(type="password", name="confirm-password", placeholder="Repeat Password")
+                button(type="submit") Sign up
+                a.sign_in_link(href="sign_in.html") Sign in
+block scripts
+    script(src="lib/jquery/jquery.js")
+    script(src="js/main.js")
+
+
+
+
+
+
+
+
+
+
+
+
+
+

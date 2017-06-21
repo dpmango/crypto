@@ -1,0 +1,189 @@
+.right_side
+  flex: 0 0 336px
+  background-color: #0F1730
+  box-shadow: inset 10px 0 80px rgba(0, 0, 0, .3)
+  &.without_key
+    position: relative
+    @media (min-width: 992px)
+      display: flex !important
+    +r(991)
+      padding: 0
+      display: none
+  +r(1450)
+    flex: 0 0 300px
+  +md
+    flex: 0 0 270px
+  +r(991)
+    display: none
+    flex: 0 0 100%
+    order: -1
+    background: $header
+    box-shadow: none
+
+.right_module
+  padding: 30px 30px 20px 30px
+  margin-bottom: 0
+  +r(1450)
+    padding: 20px
+  +r(991)
+    border-bottom: 2px solid #222943
+    max-width: 600px
+    margin:  0 auto
+  .module_title
+    margin-bottom: 20px
+    font-size: 20px
+    letter-spacing: 1px
+    +r(1450)
+      font-size: 18px
+    +r(991)
+      text-align: center
+
+
+.new-order
+  background: #222943
+  box-shadow: inset 10px 0 80px rgba(0, 0, 0, 0.2)
+  +r(991)
+    background: transparent
+    text-align: center
+  .module_title
+    width: 50%
+    float: left
+    +r(991)
+      width: 100%
+  .module_tab_content
+    clear: both
+  .block_title
+    color: rgba(255, 255, 255, .5)
+    margin-bottom: 10px
+  ul
+    float: right
+    border-radius: 4px
+    border: 2px solid rgba(255, 255, 255, 0.1)
+    overflow: hidden
+    +r(991)
+      float: none
+      display: inline-block
+      margin-bottom: 10px
+    li
+      float: left
+    a
+      display: block
+      font-size: 14px
+      padding: 3px 15px
+      +r(1450)
+        padding: 2px 8px
+      &.active, &:hover
+        background-color: $grey_bg
+  .price_block, .amount_block
+    margin-bottom: 25px
+
+
+.buy_orders, .sell_orders
+  bckground: #0F1730
+  //box-shadow: inset 10px 0 80px rgba(0, 0, 0, 0.2)
+  button
+    display: block
+    width: 100%
+    height: 45px
+    font-size: 14px
+    line-height: 45px
+    border-radius: 0 0 6px 6px
+    background-color: #212A48
+    color: rgba(255, 255, 255, 1)
+    &:hover
+      background: $active
+    &:hover i
+      opacity: 1
+    i
+      position: relative
+      top: 0px
+      height: 8px
+      width: 14px
+      opacity: .5
+      margin: 0 0 0 7px
+    &.active
+      i
+        transform-origin: 50% 50%
+        transform: rotate(180deg)
+
+
+
+
+
+  .table_wrap
+    border-radius: 4px 4px 0 0
+    padding: 9px 0 17px
+    background: #1A233F
+
+
+  table
+    margin-bottom: 0
+    td
+      letter-spacing: 1px
+    thead
+      td
+        padding: 10px 10px 9px 15px
+        text-transform: uppercase
+        color: rgba(255, 255, 255, .5)
+        font-size: 12px
+        +md
+          text-align: center
+        +r(991)
+          font-size: 14px
+    tbody
+      td
+        padding: 3px 17px
+        border-top: 0px
+        font-size: 13px
+        +md
+          padding-left: 7px
+          padding-right: 7px
+          text-align: center
+        +r(991)
+          font-size: 16px
+
+    .inactive
+      color: $inactive
+    .active
+      color: $active
+.sell_orders
+  padding-top: 15px
+
+.form_title
+  text-align: center
+  font-size: 20px
+  margin-bottom: 20px
+  +r(991)
+    display: none
+
+
+.right_modules
+  @media (min-width: 992px)
+    display: block !important
+  +r(991)
+    display: none
+    margin: 0 auto
+#import_key
+  position: fixed
+  top: 50%
+  right: 30px
+  transform: translateY(-50%)
+  width: 276px
+  +r(1450)
+    width: 236px
+  +r(1199)
+    width: 210px
+  @media (min-width: 992px)
+    display: block !important
+
+  +r(991)
+    display: none
+    position: static
+    width: 100%
+    max-width: 400px
+    padding: 20px
+    margin: 0 auto
+    transform: translateY(0%)
+  input
+    margin-bottom: 15px
+    text-align: center

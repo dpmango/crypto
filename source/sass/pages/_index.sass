@@ -1,0 +1,300 @@
+#content.main_page
+  padding: 0
+  background: $left_side
+.modules
+  padding: 0 30px
+  +r(991)
+    padding: 0 15px
+.graph
+  padding: 20px 23px
+  background: #222943
+  margin-bottom: 20px
+  +r(767)
+    padding: 20px 7px
+  .mobile
+    display: none
+    background: #262e4b
+    padding: 10px
+    width: 50%
+    min-width: 280px
+    margin: 15px auto 10px
+    +r(767)
+      display: block
+  .label_content
+    display: block
+    padding: 3px 5px
+    text-align: center
+    border-radius: 2px
+    font-style: normal
+    font-family: inherit
+    &.top
+      background: $active
+    &.bottom
+      background: $inactive
+  .arrow_top, .arrow_bottom
+    display: inline-block
+    height: 6px
+    width: 6px
+    margin: 0 5px 0 0
+    background: transparent
+    border: solid white
+    border-width: 0 2px 2px 0
+    transition: all .25s ease-in-out
+  .arrow_top
+    transform: rotate(-135deg)
+  .arrow_bottom
+    transform: translateY(-2px) rotate(45deg)
+.exchange_text
+  font-size: 13px
+  margin-bottom: 0
+  +r(1750)
+    margin-bottom: 10px
+  +r(767)
+    text-align: center
+    font-size: 18px
+    color: rgba(255, 255, 255, 0.9)
+.exchange_data
+  flex: 0 0 50%
+  padding-right: 20px
+  text-align: right
+  font-size: 14px
+  color: $text
+  +r(1450)
+    flex: 0 0 100%
+    margin-bottom: 10px
+  +r(767)
+    margin-top: 20px
+    margin-bottom: 20px
+    padding: 0
+    text-align: center
+  span
+    padding-right: 10px
+  .value
+    color: white
+.top_line
+  flex-flow: wrap
+.tabs_chart
+  flex: 0 0 50%
+  margin-top: 10px
+  margin-bottom: 20px
+  +r(1750)
+    margin-top: 0
+  +r(1450)
+    flex: 0 0 100%
+  +r(767)
+    text-align: center
+
+  li
+    float: left
+    +r(767)
+      float: none
+      display: block
+      width: 50%
+      min-width: 280px
+      margin: 3px auto
+  a
+    display: inline-block
+    padding: 0 25px
+    color: $text
+    font-size: 20px
+    letter-spacing: 1.5px
+    &.active, &:hover
+      color: white
+    +r(1750)
+      font-size: 18px
+      padding: 0 15px
+    +r(767)
+      display: block
+      padding: 10px 10px
+      background: $header
+      border-bottom: 2px solid  #222943
+      font-size: 17px
+  li:first-child
+    a
+      padding-left: 0
+      +r(767)
+        padding: 10px 10px
+.tabs_chart_content
+  position: relative
+  & > div
+    @extend %tab_block
+    height: 530px
+    +r(1450)
+      height: 450px
+    +r(1200)
+      height: 350px
+    +r(640)
+      height: 280px
+    +r(400)
+      height: 200px
+    &:before, &:after
+      content: ''
+      display: none
+      position: absolute
+      top: 0px
+      height: calc(100% - 30px)
+      width: 120px
+      z-index: 999
+    &:before
+      left: 45px
+      background: linear-gradient(90deg, rgba(35,42,68, .7) 10%, rgba(35,42,68, .5) 50%, rgba(35,42,68, 0) 100%)
+    &:after
+      right: 45px
+      background: linear-gradient(90deg, rgba(35,42,68, 0) 10%, rgba(35,42,68, .5) 50%, rgba(35,42,68, .7) 100%)
+  & > div > div
+    height: 100%
+    +r(767)
+      height: calc(100% - 40px)
+
+
+.add_point
+  display: none
+  @media (min-width: 768px)
+    display: none !important
+  +r(991)
+    max-width: 150px
+
+.module.orders
+  table
+    margin-bottom: 35px
+    +r(767)
+      text-align: center
+    tr
+      +r(767)
+        display: inline-block
+        text-align: center
+        margin: 0 10px 10px
+        min-width: 250px
+        width: 45%
+      +r(575)
+        width: 100%
+        margin: 0 0 10px
+
+    td
+      border-bottom: 9px solid #0F1730
+      background: #1E2640
+      padding: 8px 17px 8px
+      font-size: 15px
+      +r(1450)
+        padding: 7px 7px
+        font-size: 14px
+      +r(767)
+        display: inline-block
+        width:  100% !important
+        text-align: center
+      &:first-child, &:last-child
+      &:first-child, &:last-child
+        +r(1450)
+          padding: 7px 17px
+      &:first-child
+        width: 17%
+        border-radius: 4px
+        +r(1450)
+          width: 23%
+      &:nth-child(2)
+        width: 21%
+      &:nth-child(3)
+        width: 26%
+      &:nth-child(4)
+        width: 27%
+        +r(991)
+          width: 20%
+
+    thead
+      +r(767)
+        display: none
+      td
+        background: transparent
+        text-transform: uppercase
+        color: rgba(255, 255, 255, .5)
+        padding-left: 17px
+        padding-bottom: 2px
+        font-size: 14px
+        +r(1450)
+          padding-left: 7px
+          font-size: 14px
+        &:first-child
+          +r(1450)
+           padding-left: 17px
+
+    .cancel
+      background: $btn_danger
+      padding: 3px 35px
+      color: white
+      border-radius: 2px
+      position: relative
+      &:after
+        content: ''
+        display: block
+        width: 100%
+        height: 100%
+        position: absolute
+        top: 0
+        left: 0
+        background: rgba(255, 255, 255, 0)
+        transition: all 0.25s ease-in-out
+      &:hover::after
+        background: rgba(255, 255, 255, 0.1)
+
+.module.exchanges
+  & > div
+    text-align: center
+  .module_title
+    float: left
+    +r(767)
+      float: none
+  .exchange_block
+    &:last-child
+      display: none
+    & > div
+      flex-flow: wrap
+      margin: 0 -15px
+      +r(767)
+        justify-content: center
+        margin: 0px
+  .exchange
+    flex: 0 0 25%
+    padding: 0 15px 0px
+    margin-bottom: 30px
+    +r(767)
+      flex: 0 0 50%
+      max-width: 280px
+      margin-bottom: 20px
+      padding: 0 10px
+    +r(520)
+      flex: 0 0 100%
+
+    a
+      display: flex
+      height: 150px
+      background: #1E2640 !important
+      border-radius: 2px
+      padding: 0 15px
+      &:hover
+        background: darken(#1B223F, 0.5%) !important
+
+      +r(1750)
+        height: 120px
+      +r(1450)
+        height: 90px
+    img
+      display: block
+      margin: auto
+
+  .more_orders
+    float: right
+    display: inline-block
+    padding: 3px 35px
+    border-radius: 2px
+    font-size: 14px
+    border: 1px solid rgba(255, 255, 255, 0.1)
+    &:hover, &.active
+      background: $active
+      border-color: $active
+    +r(767)
+      float: none
+      margin-bottom: 20px
+
+
+.canvasjs-chart-tooltip > div
+  padding: 0 !important

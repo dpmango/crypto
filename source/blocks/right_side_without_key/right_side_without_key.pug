@@ -1,0 +1,13 @@
+mixin right_side_without_key()
+	.right_side.without_key
+		button.mobile Import API key
+			i.arrow
+		form#import_key
+			p.form_title
+				| Import API key
+				<br />
+				| to trade on Bitfinex
+			input(type="text", name="key", placeholder="API Key")
+			input(type="text", name="key_secret", placeholder="API Secret")
+			button(type="submit") Import
+

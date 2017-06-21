@@ -1,0 +1,172 @@
+.open_modal
+  background: grey
+  overflow: hidden
+  //padding-right: 17px
+
+.blur
+  filter: blur(5px)
+  position: relative
+  &:after
+    content: ''
+    display: block
+    background: radial-gradient(ellipse farthest-corner at center center, rgba(0,0,0,0.2) 20%, rgba(0,0,0,0.55) 100%) repeat scroll 0 0
+    position: fixed
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 999
+    +r(767)
+      background: rgba(0,0, 0, .5)
+
+.modal_wrap
+  display: none
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  padding: 50px 15px
+  z-index: 1000
+  overflow: auto
+  &.open
+    display: flex
+    & > div
+      animation: show 0.5s ease-in-out forwards
+
+  &.close
+    display: flex
+    & > div
+      animation: hide .5s ease-in-out forwards
+  +r(767)
+    padding: 15px
+  .modal_content
+    margin: auto
+    width: 640px
+    max-width: 100%
+    padding: 40px
+    background: #171d33
+  .title
+    margin-bottom: 28px
+    font-size: 30px
+    +r(767)
+      padding: 0 20px
+  .close_modal
+    display: block
+    width: 60px
+    height: 60px
+    position: absolute
+    top: 28px
+    right: 22px
+    border-radius: 50%
+    background: transparent
+    border: 2px solid rgba(255,255, 255, .2)
+    z-index: 1
+
+    &:hover
+      border-color: $active
+      &:after, &:before
+       background: $active
+    +r(767)
+      border-color: transparent
+      &:hover
+        border-color: transparent
+    +r(767)
+      width: 40px
+      height: 40px
+      top: 10px
+      right: 10px
+    &:after, &:before
+      content: ''
+      display: block
+      height: 30px
+      width: 2px
+      position: absolute
+      top: 12px
+      left: 50%
+      margin-left: -1px
+      background: rgba(255,255, 255, .2)
+      transition: all 0.25s ease-in-out
+      +r(767)
+        height: 20px
+        top: 8px
+        background: white
+    &:after
+      transform: rotate(45deg)
+    &:before
+      transform: rotate(-45deg)
+
+
+@keyframes show
+  from
+    opacity: 0
+    transform: scale(0, 0)
+  to
+    opacity: 1
+    transform: scale(1, 1)
+
+@keyframes hide
+  from
+    opacity: 1
+    //transform: scale(1, 1)
+  to
+    opacity: 0
+    //transform: scale(0, 0)
+
+
+
+#receive_modal
+  .amount_block, .wallet_block
+    text-align: center
+
+#deposit_modal
+  .modal_content
+    padding: 30px 100px
+    +r(767)
+      padding: 30px
+  label
+    margin-bottom: 30px
+    span
+      display: block
+      margin-bottom: 7px
+      color: rgba(255, 255, 255, 0.4)
+    input
+      margin: 0 auto
+      border: 1px solid transparent
+      height: 34px
+      padding:  0 10px
+      max-width: 325px
+      background: #2f3448
+      transition: all 0.25s ease-in-out
+      &:focus
+        background: transparent
+        border-color: white
+  .send
+    margin-bottom: 40px
+    line-height: 1.5
+  [type="submit"]
+    max-width: 280px
+    margin: 0 auto
+
+#receive_modal
+  .modal_content
+    padding-top: 30px
+    width: 450px
+  .block_title
+    color: rgba(255, 255, 255, 0.5)
+  .change_input
+    max-width: 300px
+    margin: 0 auto 20px
+  input, button
+    max-width: 300px
+    margin: 0 auto 20px
+
+#warning_modal
+  .title
+    margin-bottom: 10px
+  .description
+    margin-bottom: 30px
+  .modal_link
+    max-width: 280px
+    display: block
+    margin: 0 auto

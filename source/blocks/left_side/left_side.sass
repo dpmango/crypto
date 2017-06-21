@@ -1,0 +1,84 @@
+.left_side
+	flex: 0 0 120px
+	background: $left_side
+	box-shadow: inset -10px 0 80px rgba(0, 0, 0, 0.28)
+
+	+md
+		flex: 0 0 100.58px
+	@media (min-width: 992px)
+		display: block !important
+	+r(991)
+		display: none
+		flex: 0 0 100%
+		padding: 0
+		box-shadow: none
+		background: $header
+	ul
+		padding-top: 30px
+		+md
+			padding-left: 10px
+			padding-right: 10px
+		@media (min-width: 992px)
+			display: block !important
+		+r(991)
+			display: none
+			padding: 0
+	ul li
+		margin-bottom: 36px
+		+md
+			margin-bottom: 25px
+		+r(991)
+			margin-bottom: 0
+	ul a
+		display: block
+		&.active, &:hover
+			.text
+				text-decoration: none
+				color: rgba(255, 255, 255, 1)
+			.ico
+				opacity: 1
+
+		+r(991)
+			padding: 20px 20px
+			border-bottom: 2px solid #222943
+		span
+			display: block
+			text-align: center
+
+		.ico
+			width: 39px !important
+			height: 35px !important
+			margin: 0 auto 12px
+			opacity: 0.3
+			transition: all 0.25s ease-in-out
+			+md
+				margin-bottom: 7px
+				width: 30px
+				height: 30px
+			+r(991)
+				display: none
+		.text
+			color: rgba(255, 255, 255, .3)
+			transition: all 0.25s ease-in-out
+			+r(991)
+				color: white
+			+md
+				font-size: 16px
+			+r(991)
+				text-align: left
+
+
+
+		+retinaNav(dashboard, $ico1hover, $ico1hover2x, -97px, 0px )
+		+retinaNav(security, $ico2hover, $ico2hover2x, -45px, -89px )
+		+retinaNav(api_keys, $ico3hover, $ico3hover2x, -90px, -89px )
+		+retinaNav(faq, $ico4hover, $ico4hover2x, -49px, 0 )
+		+retinaNav(about, $ico4hover, $ico4hover2x, -93px, -44px )
+
+		&.faq .ico
+			width: 39px !important
+
+
+		
+			
+				
