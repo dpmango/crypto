@@ -83,5 +83,5 @@ var gcmq          = require('gulp-group-css-media-queries');
 	gulp.task("watch", ["browser-sync"], function() {
 		gulp.watch(["./source/sass/main.sass", "./source/**/*.sass"], ["styles"]);
 		gulp.watch("./source/**/*.pug", ["pages"]);
-    gulp.watch("./source/sprites/**/*.+(png|jpg|gif|svg)", ["sprites"]);
+    // gulp.watch("./source/sprites/**/*.+(png|jpg|gif|svg)", ["sprites"]);
 	});
