@@ -215,6 +215,7 @@ a.modal_link
 .page_wrap
   display: flex
   min-height: calc(100vh - #{$header_height})
+  transition: filter .2s ease-in-out
   +r(1450)
     min-height: calc(100vh - #{$header_height1450})
   +r(991)
@@ -480,7 +481,7 @@ a.text
       border: 0
       &:hover
         background: $active
-     
+
       span
         display: block
         margin: 0 auto
@@ -504,16 +505,3 @@ a.text
           +retina
             @include sprite2x($plus2x)
             background-position: 145px 22px
-
-
-
-
-
-
-
-
-
-
-
-
-

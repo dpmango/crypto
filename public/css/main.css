@@ -254,6 +254,10 @@ a.modal_link {
   display: flex;
   min-height: -webkit-calc(100vh - 110px);
   min-height: calc(100vh - 110px);
+  -webkit-transition: -webkit-filter .2s ease-in-out;
+  transition: -webkit-filter .2s ease-in-out;
+  transition: filter .2s ease-in-out;
+  transition: filter .2s ease-in-out, -webkit-filter .2s ease-in-out;
 }
 
 .page_wrap .content_block {
@@ -2243,6 +2247,10 @@ header {
   box-shadow: 5px 9px 52px rgba(0, 0, 0, 0.23);
   color: #fff;
   z-index: 2;
+  -webkit-transition: -webkit-filter .2s ease-in-out;
+  transition: -webkit-filter .2s ease-in-out;
+  transition: filter .2s ease-in-out;
+  transition: filter .2s ease-in-out, -webkit-filter .2s ease-in-out;
 }
 
 header > .top {
