@@ -2,6 +2,7 @@
 
 var gulp = require("gulp");
 var sass = require("gulp-sass");
+var sourcemaps = require('gulp-sourcemaps');
 var pug = require("gulp-pug");
 var autoprefixer = require("autoprefixer");
 var postcss = require("gulp-postcss");
@@ -12,6 +13,8 @@ var spritesmith = require("gulp.spritesmith");
 var gulpif = require("gulp-if");
 var gcmq = require('gulp-group-css-media-queries');
 
+  // default task
+  gulp.task("default", ["pages","styles", "watch"]);
 
 
 	let postplugins = [
@@ -21,10 +24,12 @@ var gcmq = require('gulp-group-css-media-queries');
 
 	gulp.task("styles", function() {
 		gulp.src("./source/sass/main.sass")
+      .pipe( sourcemaps.init() )
 			.pipe(plumber())
 			.pipe(sass({outputStyle: 'expanded'}))
 			.pipe(postcss(postplugins))
             .pipe(gcmq())
+      .pipe( sourcemaps.write('.') )
 			.pipe(gulp.dest("./public/css/"))
 			.pipe(browserSync.reload({stream: true}));
 	});
@@ -49,7 +54,7 @@ var gcmq = require('gulp-group-css-media-queries');
 			.pipe(gulpif('*.sass', gulp.dest('./source/sass/sprites/')));
 	});
 
-	
+
 	gulp.task("browser-sync", function() {
 		browserSync({
 			server: {
@@ -75,5 +80,3 @@ var gcmq = require('gulp-group-css-media-queries');
 		gulp.watch(["./source/sass/main.sass", "./source/**/*.sass"], ["styles"]);
 		gulp.watch("./source/**/*.pug", ["pages"]);
 	});
-
-	gulp.task("public", ["pages","styles", "watch"]);
