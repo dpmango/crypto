@@ -278,7 +278,7 @@ a.modal_link {
   -webkit-box-flex: 9;
   -webkit-flex: 9 9;
   -ms-flex: 9 9;
-  flex: 9 9;
+  flex: 9 9 0%;
   padding: 45px 40px 30px 30px;
   background: #222943;
   min-height: -webkit-calc(100vh - 110px - 90px);
@@ -1044,7 +1044,7 @@ textarea:focus,
   -webkit-box-flex: 0;
   -webkit-flex: 0 53%;
   -ms-flex: 0 53%;
-  flex: 0 53%;
+  flex: 0 53% 0%;
   -webkit-border-radius: 2px 0 0 2px;
   border-radius: 2px 0 0 2px;
 }
@@ -2257,7 +2257,7 @@ header > .top {
   -webkit-box-flex: 0;
   -webkit-flex: 0  0 120px;
   -ms-flex: 0  0 120px;
-  flex: 0  0 120px;
+  flex: 0 0 120px;
 }
 
 header .left-block,
@@ -2293,7 +2293,7 @@ header .right-block .log_out {
   -webkit-box-flex: 0;
   -webkit-flex: 0 0  auto;
   -ms-flex: 0 0  auto;
-  flex: 0 0  auto;
+  flex: 0 0 auto;
   border-right: 2px solid #313852;
   padding: 0 20px;
   color: white;
@@ -2392,7 +2392,7 @@ header .logo {
   -webkit-box-flex: 0;
   -webkit-flex: 0  0 100%;
   -ms-flex: 0  0 100%;
-  flex: 0  0 100%;
+  flex: 0 0 100%;
   background-color: #262e4b;
   text-align: center;
   -webkit-box-shadow: inset -10px 0 80px rgba(0, 0, 0, 0.42);
@@ -2477,7 +2477,7 @@ header .left-block {
   -webkit-box-flex: 1;
   -webkit-flex: 1  1 auto;
   -ms-flex: 1  1 auto;
-  flex: 1  1 auto;
+  flex: 1 1 auto;
 }
 
 header .left-block .price {

@@ -1,25 +1,30 @@
 "use strict";
 
-var gulp = require("gulp");
-var sass = require("gulp-sass");
-var sourcemaps = require('gulp-sourcemaps');
-var pug = require("gulp-pug");
-var autoprefixer = require("autoprefixer");
-var postcss = require("gulp-postcss");
-var plumber = require('gulp-plumber');
-var browserSync = require('browser-sync');
-var minify = require("gulp-csso");
-var spritesmith = require("gulp.spritesmith");
-var gulpif = require("gulp-if");
-var gcmq = require('gulp-group-css-media-queries');
+var gulp          = require("gulp");
+var sass          = require("gulp-sass");
+var sourcemaps    = require('gulp-sourcemaps');
+var pug           = require("gulp-pug");
+var autoprefixer  = require("autoprefixer");
+var sorting       = require('postcss-sorting');
+var flexbugs      = require('postcss-flexbugs-fixes');
+var postcss       = require("gulp-postcss");
+var plumber       = require('gulp-plumber');
+var browserSync   = require('browser-sync');
+var minify        = require("gulp-csso");
+var spritesmith   = require("gulp.spritesmith");
+var gulpif        = require("gulp-if");
+var gcmq          = require('gulp-group-css-media-queries');
 
   // default task
   gulp.task("default", ["pages","styles", "watch"]);
 
 
 	let postplugins = [
-		autoprefixer({
-			browsers: ["last 15 versions"]})
+      sorting(),
+  		autoprefixer({
+  			browsers: ["last 15 versions"]
+      }),
+      flexbugs()
 		];
 
 	gulp.task("styles", function() {
